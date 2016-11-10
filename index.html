@@ -1,0 +1,62 @@
+<DOCTYPE html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>	Simple animations</title>
+		<link rel="stylesheet"  href="animate.css">
+		<style type="text/css">
+			body {
+				background-color: #ececec;
+				font-family: Helvetica;
+			}
+			.newsletterForm {
+				width: 300px;
+				margin: 200px auto 0 auto;
+				background-color: white;
+				padding: 10px 20px 20px 20px;
+				line-height: 160%;
+				font-size: 14px;
+				text-align: center;
+			}
+			.textbox {
+				width: 275;
+				font-size: 16px;
+				font-weight: 100;
+				padding: 10px;
+
+			}
+			.btn {
+				background-color: dodgerblue;
+				border: 0;
+				color: white;
+				padding: 10px;
+				font-size: 12px;
+				width: 100%;
+				margin-top: 10px;
+				outline: none;
+			}
+			.btn:active {
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class = "newsletterForm">
+			<p>Tell us your email, then we will send you stuff everyday hehe!!</p>
+			<input type = "text" placeholder = "Email Address" class ="textbox" id="emailField">
+			<input type="submit" value="Click Me!" class="btn" id="newsletterBtn">
+		</div>
+
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<script>
+			$('#newsletterBtn').on('click', function()	{
+				$('#emailField').addClass('animated shake');
+					$('#emailField').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+							$('#emailField').removeClass('animated shake');
+					});
+			});
+		</script>
+	</body>
+</html>
